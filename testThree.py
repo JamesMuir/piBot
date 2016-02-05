@@ -22,7 +22,7 @@ def getDistance():
        
     GPIO.output(trigger, False)                 #Set TRIG as LOW
     print("Waitng For Sensor To Settle")
-    time.sleep(0.5)                            #Delay of 2 seconds
+    time.sleep(0.2)                            #Delay of .2 seconds
 
     GPIO.output(trigger, True)                  #Set TRIG as HIGH
     time.sleep(0.00001)                      #Delay of 0.00001 seconds
