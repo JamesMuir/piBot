@@ -2,13 +2,15 @@
 #import time
 #GPIO.setmode(GPIO.BCM)
 
-#Ultrasonic distance sensor
+#Ultrasonic distance sensor (SR04)
 class ultrasonicSensor:
     #Function that initalises the object
     def __init__(self, ID, trigger, echo):
         self.ID = ID
         self.trigger = trigger
         self.echo = echo
+        GPIO.output(trigger, True)
+        GPIO.output(echo, True)     
 
     #Function that displays the ID and trigger and echo pins of the object
     def displayInformation(self):
@@ -37,4 +39,7 @@ class ultrasonicSensor:
         distance = pulseLength * 17150
 
         return distance 
+
+#Motor control (Using an L293DNE)
+class motor:
         
