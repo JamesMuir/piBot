@@ -9,8 +9,8 @@ class ultrasonicSensor:
         self.ID = ID
         self.trigger = trigger
         self.echo = echo
-        GPIO.output(trigger, True)
-        GPIO.output(echo, True)     
+        GPIO.setup(trigger, GPIO.OUT)
+        GPIO.setup(echo, GPIO.IN)     
 
     #Function that displays the ID and trigger and echo pins of the object
     def displayInformation(self):
@@ -42,4 +42,40 @@ class ultrasonicSensor:
 
 #Motor control (Using an L293DNE)
 class motor:
+    #Groups
+    leftMotors = []
+    rightMotors = []
+    
+    #Function that initalises the object
+    def __init__(self, ID, forward, backward):
+        self.ID = ID
+        self.forward = forward
+        self.backward = backward
+        GPIO.setup(forwards, GPIO.OUT)
+        GPIO.setup(backwards, GPIO.OUT)
+            
+    def displayInformation(self):
+        print("ID: {}".format(self.ID))
+        print("Forward Pin: {}".format(self.foward))
+        print("Backward Pin: {}".format(self.backward))   
+
+    def move(self, direction, startOrStop):
+        GPIO.output(direction, GPIO.startOrStop)
         
+    def turn():
+        pass
+
+    def addToGroup(self, motor, ):
+    
+class pir:
+    pass
+
+class camera:
+    pass
+
+class shiftRegister:
+    pass
+
+
+
+
